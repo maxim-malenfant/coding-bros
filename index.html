@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Bros Code - From Gains to Brains 💪💻</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .bros-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .bro-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .bro-icon {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .bro-name {
+            font-size: 2em;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .bro-motto {
+            text-align: center;
+            font-style: italic;
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .bro-stats {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .journey-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .journey-section h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "💪";
+            position: absolute;
+            left: -40px;
+            font-size: 1.5em;
+        }
+
+        .timeline-item h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .tech-stack {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-stack h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .motivation-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .motivation-section h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            font-size: 1.8em;
+            font-style: italic;
+            color: #764ba2;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 1.1em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 GYM BROS CODE 💻</h1>
+            <div class="tagline">From Gains to Brains</div>
+            <div class="subtitle">Two dudes turning post-workout vibes into code that matters</div>
+        </header>
+
+        <div class="bros-section">
+            <div class="bro-card">
+                <div class="bro-icon">🏋️‍♂️</div>
+                <div class="bro-name">Bro #1: Chad</div>
+                <div class="bro-motto">"I lift weights AND exceptions"</div>
+                <div class="bro-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Bench Press:</span>
+                        <span class="stat-value">225 lbs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Favorite Language:</span>
+                        <span class="stat-value">Python 🐍</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Coding Since:</span>
+                        <span class="stat-value">6 months</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Superpower:</span>
+                        <span class="stat-value">Debugging</span>
+                    </div>
+                </div>
+                <p><strong>Fun Fact:</strong> Chad discovered that his protein shake breaks are perfect for solving algorithm problems. He swears his brain works better after leg day!</p>
+            </div>
+
+            <div class="bro-card">
+                <div class="bro-icon">🤸‍♂️</div>
+                <div class="bro-name">Bro #2: Brad</div>
+                <div class="bro-motto">"Flexing code like I flex biceps"</div>
+                <div class="bro-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Deadlift PR:</span>
+                        <span class="stat-value">315 lbs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Favorite Language:</span>
+                        <span class="stat-value">JavaScript 📜</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Coding Since:</span>
+                        <span class="stat-value">6 months</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Superpower:</span>
+                        <span class="stat-value">Front-end Design</span>
+                    </div>
+                </div>
+                <p><strong>Fun Fact:</strong> Brad treats his code like his workout routine - consistent, structured, and always pushing for progressive overload. He names his variables after exercises!</p>
+            </div>
+        </div>
+
+        <div class="journey-section">
+            <h2>Our Coding Journey 🚀</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>How It Started</h3>
+                    <p>After crushing a chest day, we were sitting in the gym parking lot talking about the future. "Bro, what if we could build apps as sick as our physiques?" Chad said. Brad replied, "Dude, let's do it!" And just like that, Gym Bros Code was born.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Early Days</h3>
+                    <p>We started with HTML and CSS while sipping our post-workout shakes. "This is just like meal prep," Brad said, "you need the right ingredients in the right order." We built our first website - a simple gym tracker. It looked terrible, but it was OURS.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Leveling Up</h3>
+                    <p>JavaScript hit us harder than our first set of squats. But just like in the gym, we didn't quit. We learned that coding, like working out, is all about consistency, patience, and the occasional rage against a bug that makes no sense.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Breakthrough</h3>
+                    <p>After 3 months, we built our first real project - a workout tracking app with a clean UI and smooth animations. The moment it worked flawlessly, we felt the same rush as hitting a new PR. We were officially gym bros who code!</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Now</h3>
+                    <p>6 months in, and we're building full-stack applications, learning React, diving into backend development with Node.js, and even dabbling in mobile apps. Our post-gym sessions have become sacred coding time. The endorphins from working out fuel our creativity and problem-solving!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h2>💻 Our Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">HTML5</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">React</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">Git</div>
+                <div class="tech-item">VS Code</div>
+            </div>
+        </div>
+
+        <div class="motivation-section">
+            <h2>Why Post-Gym Coding Rocks 🔥</h2>
+            <div class="quote">
+                "Your mind is never sharper than right after a great workout. The discipline from the gym translates perfectly to coding. Both require patience, consistency, and the willingness to fail until you succeed."
+            </div>
+            <div class="quote-author">- Chad & Brad, Gym Bros Code</div>
+            
+            <h3 style="color: #764ba2; margin: 30px 0 20px 0; font-size: 1.8em;">The Gym-To-Code Philosophy:</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto; font-size: 1.2em; color: #555;">
+                <li style="margin-bottom: 15px;">🎯 <strong>Progressive Overload:</strong> Start with simple projects, gradually increase complexity</li>
+                <li style="margin-bottom: 15px;">💪 <strong>Consistency Over Intensity:</strong> Code a little every day, just like training</li>
+                <li style="margin-bottom: 15px;">🤝 <strong>Find Your Gym Buddy:</strong> Learning with a friend makes the journey 10x better</li>
+                <li style="margin-bottom: 15px;">📈 <strong>Track Your Progress:</strong> Celebrate small wins, they add up!</li>
+                <li style="margin-bottom: 15px;">🔥 <strong>Embrace The Burn:</strong> Bugs are like muscle soreness - they mean you're growing</li>
+            </ul>
+
+            <div style="margin-top: 40px;">
+                <a href="#" class="cta-button">Join The Journey 💪💻</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>💪 Built with gains, dedication, and a lot of coffee ☕</p>
+            <p style="margin-top: 10px; font-size: 1.3em;">GYM BROS CODE © 2024</p>
+            <p style="margin-top: 10px; font-style: italic;">"No rep left behind, no bug left unfixed"</p>
+        </footer>
+    </div>
+</body>
+</html>
